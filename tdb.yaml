@@ -1,0 +1,320 @@
+type: picture-elements
+image: /local/pictures/schemaHydraulique.png
+elements:
+  - type: state-badge
+    style:
+      left: 10%
+      top: 15%
+      color: transparent
+    entity: sensor.solisart_t1
+    title: T1 Chaud Capteur
+  - type: state-badge
+    style:
+      left: 25%
+      top: 43%
+      color: transparent
+    entity: sensor.solisart_t5
+    title: T5 Bal. Tampon
+  - type: state-badge
+    style:
+      left: 55%
+      top: 45%
+      color: transparent
+    entity: sensor.solisart_t4
+    title: T4 ECS Appoint
+  - type: state-badge
+    entity: sensor.solisart_t3
+    title: T3 ECS Solaire
+    style:
+      left: 55%
+      top: 58%
+      color: transparent
+  - type: state-badge
+    style:
+      left: 70%
+      top: 10%
+      color: transparent
+    entity: sensor.solisart_t8
+    title: T8 Coll. Chaud
+  - type: state-badge
+    entity: sensor.solisart_t11
+    title: T11 Maison
+    style:
+      left: 88.5%
+      top: 52%
+      color: transparent
+  - type: state-badge
+    style:
+      left: 90%
+      top: 9%
+      color: transparent
+    entity: sensor.solisart_t9
+    title: T9 Exterieur
+  - title: Chaudiere
+    type: custom:button-card
+    entity: binary_sensor.solisart_chaudiere1
+    name: "[[[ return entity.state ]]]"
+    size: 20%
+    color_type: icon
+    icon: mdi:fire
+    style:
+      left: 66.5%
+      top: 27.6%
+    styles:
+      card:
+        - background-color: rgba(0, 0, 0, 0.0)
+    state:
+      - value: "on"
+        styles:
+          icon:
+            - animation: blink 2s ease infinite
+            - color: rgb(255,0,0)
+      - value: "off"
+        styles:
+          icon:
+            - animation: none
+            - color: rgb(200,200,200)
+  - type: custom:button-card
+    title: C4 Appoint
+    entity: sensor.solisart_cir1_c4_bal_appoint
+    name: "[[[ return entity.state + \"%\"]]]"
+    size: 25%
+    color_type: icon
+    icon: mdi:fan
+    styles:
+      card:
+        - background-color: rgba(0, 0, 0, 0.0)
+    label: null
+    style:
+      left: 72.5%
+      top: 72.3%
+    state:
+      - value: 50
+        operator: ">="
+        color: rgb(0,255,0)
+        styles:
+          icon:
+            - animation: rotating 1s linear infinite
+            - color: rgb(0,255,0)
+      - value: 1
+        operator: ">="
+        styles:
+          icon:
+            - animation: rotating 2s linear infinite
+            - color: rgb(0,0,255)
+      - value: 0
+        color: rgb(100,100,100)
+  - type: custom:button-card
+    title: C1 Chauffage Maison
+    entity: sensor.solisart_cir5_c1_chauf_maison
+    name: "[[[ return entity.state + \"%\"]]]"
+    size: 25%
+    color_type: icon
+    icon: mdi:fan
+    styles:
+      card:
+        - background-color: rgba(0, 0, 0, 0.0)
+    label: null
+    style:
+      left: 84.9%
+      top: 72.3%
+    state:
+      - value: 50
+        operator: ">="
+        color: rgb(0,255,0)
+        styles:
+          icon:
+            - animation: rotating 1s linear infinite
+            - color: rgb(0,255,0)
+      - value: 1
+        operator: ">="
+        styles:
+          icon:
+            - animation: rotating 2s linear infinite
+            - color: rgb(0,0,255)
+      - value: 0
+        color: rgb(100,100,100)
+  - type: custom:button-card
+    title: C5 Bal. Solaire
+    entity: sensor.solisart_cir2_c5_bal_solaire
+    name: "[[[ return entity.state + \"%\"]]]"
+    size: 25%
+    color_type: icon
+    icon: mdi:fan
+    styles:
+      card:
+        - background-color: rgba(0, 0, 0, 0.0)
+    label: null
+    style:
+      left: 60.3%
+      top: 72.3%
+    state:
+      - value: 50
+        operator: ">="
+        color: rgb(0,255,0)
+        styles:
+          icon:
+            - animation: rotating 1s linear infinite
+            - color: rgb(0,255,0)
+      - value: 1
+        operator: ">="
+        styles:
+          icon:
+            - animation: rotating 2s linear infinite
+            - color: rgb(0,0,255)
+      - value: 0
+        color: rgb(100,100,100)
+  - type: custom:button-card
+    title: C6 Bal. Tampon
+    entity: sensor.solisart_cir3_c6_bal_tampon
+    name: "[[[ return entity.state + \"%\"]]]"
+    size: 25%
+    color_type: icon
+    icon: mdi:fan
+    styles:
+      card:
+        - background-color: rgba(0, 0, 0, 0.0)
+    label: null
+    style:
+      left: 18.9%
+      top: 72.3%
+    state:
+      - value: 50
+        operator: ">="
+        color: rgb(0,255,0)
+        styles:
+          icon:
+            - animation: rotating 1s linear infinite
+            - color: rgb(0,255,0)
+      - value: 1
+        operator: ">="
+        styles:
+          icon:
+            - animation: rotating 2s linear infinite
+            - color: rgb(0,0,255)
+      - value: 0
+        color: rgb(100,100,100)
+  - type: custom:button-card
+    title: V3VTAM
+    entity: sensor.solisart_v3vtam
+    name: "[[[ return entity.state + \"%\"]]]"
+    size: 23%
+    show_name: false
+    styles:
+      card:
+        - background-color: rgba(0, 0, 0, 0.0)
+    style:
+      left: 12.2%
+      top: 79.5%
+      color: transparent
+    state:
+      - value: 95
+        operator: ">="
+        color_type: icon
+        icon: mdi:arrow-up-thin-circle-outline
+        color: rgb(219,68,55)
+      - value: 5
+        operator: ">="
+        color_type: icon
+        icon: mdi:arrow-top-left-thin-circle-outline
+        color: rgb(235,132,25)
+      - value: 5
+        operator: <
+        color_type: icon
+        icon: mdi:arrow-left-thin-circle-outline
+        color: rgb(251,196,0)
+  - type: custom:button-card
+    title: V3VAPP
+    entity: sensor.solisart_v3vapp
+    name: "[[[ return entity.state + \"%\"]]]"
+    size: 25%
+    aspect-ratio: 1/1
+    show_name: false
+    style:
+      left: 66.4%
+      top: 79.5%
+      color: transparent
+    styles:
+      card:
+        - background-color: rgba(0, 100, 0, 0.0)
+    state:
+      - value: 95
+        operator: ">="
+        color_type: icon
+        icon: mdi:arrow-up-thin-circle-outline
+        color: rgb(219,68,55)
+      - value: 5
+        operator: ">="
+        color_type: icon
+        icon: mdi:arrow-top-left-thin-circle-outline
+        color: rgb(235,132,25)
+      - value: 5
+        operator: <
+        color_type: icon
+        icon: mdi:arrow-left-thin-circle-outline
+        color: rgb(251,196,0)
+  - type: state-badge
+    entity: sensor.solisart_t2
+    style:
+      left: 17%
+      top: 81%
+      color: transparent
+    title: T2 Froid Capteur
+  - type: state-badge
+    entity: sensor.solisart_t7
+    title: T7 Coll. Froid
+    style:
+      left: 71%
+      top: 81%
+      color: transparent
+  - type: state-label
+    title: DT Capteur
+    style:
+      left: 8.5%
+      top: 22%
+      font-size: 135%
+    entity: sensor.solisart_dt_capteur
+    prefix: "DT= "
+  - type: state-label
+    title: DT Maison
+    style:
+      left: 79%
+      top: 42%
+      font-size: 135%
+    entity: sensor.solisart_dt_maison
+    prefix: "DT= "
+  - type: state-label
+    style:
+      left: 10%
+      top: 82%
+      font-size: 135%
+    entity: sensor.solisart_v3vtam_a
+    prefix: "A "
+  - type: state-label
+    style:
+      left: 10%
+      top: 77%
+      font-size: 135%
+    entity: sensor.solisart_v3vtam
+    prefix: "B "
+  - type: state-label
+    style:
+      left: 63.5%
+      top: 82%
+      font-size: 135%
+    entity: sensor.solisart_v3vapp_a
+    prefix: "A "
+  - type: state-label
+    style:
+      left: 63.5%
+      top: 77%
+      font-size: 135%
+    entity: sensor.solisart_v3vapp
+    prefix: "B "
+  - type: state-label
+    style:
+      left: 10%
+      top: 5%
+      font-size: 100%
+    entity: sensor.solisart_lastupdate
+ 
